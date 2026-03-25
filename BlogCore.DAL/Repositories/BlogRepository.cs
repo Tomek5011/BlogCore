@@ -15,7 +15,7 @@ public class BlogRepository
     public void AddPost(Post post)
     {
         _context.Posts.Add(post);
-        _context.SaveChanges(); // Kluczowe dla utrwalenia danych w kontenerze
+        //_context.SaveChanges();
     }
     public IEnumerable<Post> GetAllPosts()
     {
