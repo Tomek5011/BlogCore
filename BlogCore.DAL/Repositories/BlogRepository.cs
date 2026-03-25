@@ -15,7 +15,7 @@ public class BlogRepository
     public void AddPost(Post post)
     {
         _context.Posts.Add(post);
-        //_context.SaveChanges();
+        _context.SaveChanges();
     }
     public IEnumerable<Post> GetAllPosts()
     {
