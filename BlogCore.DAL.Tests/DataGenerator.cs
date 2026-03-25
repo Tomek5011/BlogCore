@@ -14,8 +14,8 @@ namespace BlogCore.DAL.Tests
         .RuleFor(p => p.Author, f => f.Name.FullName())
         .RuleFor(p => p.Content, f => f.Lorem.Paragraph());
 
-        public static Faker<Comment> GetCommentFaker(int postId) => new Faker<Comment>() 
-            .RuleFor(c => c.PostId, _ => postId) 
-            .RuleFor(c => c.Content, f => f.Lorem.Sentence()); 
+        public static Faker<Comment> GetCommentFaker(int postId) => new Faker<Comment>()
+            .RuleFor(c => c.PostId, _ => postId)
+            .RuleFor(c => c.Content, f => f.Lorem.Sentence());
     }
 }

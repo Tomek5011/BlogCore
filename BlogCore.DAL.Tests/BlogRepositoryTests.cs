@@ -27,7 +27,7 @@ namespace BlogCore.DAL.Tests
         public void AddPost_WithNullAuthor_ShouldThrowDbUpdateException()
         {
             var post = DataGenerator.GetPostFaker().Generate();
-            post.Author = null!; 
+            post.Author = null!;
 
             _repository.AddPost(post);
         }
