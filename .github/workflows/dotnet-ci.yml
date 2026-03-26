@@ -47,15 +47,15 @@ jobs:
       run: dotnet build --no-restore --configuration Release 
  
     - name: Run Tests with Coverage
-      run: dotnet test --no-build --configuration Release --logger "trx;LogFileName=test_results.trx" /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput="./"
+      run: dotnet test --no-build --configuration Release --logger "trx;LogFileName=test_results.trx" --results-directory ./TestResults /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput="./"
 
     - name: Upload test results (TRX + Coverage)
       uses: actions/upload-artifact@v4
       with:
         name: Test-Results
         path: |
-          test_results.trx
-          coverage.opencover.xml
+          TestResults/test_results.trx
+          TestResults/coverage.opencover.xml
         if-no-files-found: warn
  
     # 7. Przygotowanie wersji instalacyjnej aplikacji (Publish) 
